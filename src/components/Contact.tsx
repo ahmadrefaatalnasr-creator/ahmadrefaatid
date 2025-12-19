@@ -7,8 +7,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'ahmed.m.refaat.2024@gmail.com',
-      link: 'mailto:ahmed.m.refaat.2024@gmail.com'
+      value: 'ahmadrefaatalnasr@gmail.com',
+      link: 'mailto:ahmadrefaatalnasr@gmail.com'
     },
     {
       icon: MapPin,
@@ -64,7 +64,7 @@ const Contact = () => {
             <Button 
               size="lg" 
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8" 
-              onClick={() => window.open('mailto:ahmed.m.refaat.2024@gmail.com')}
+              onClick={() => window.open('mailto:ahmadrefaatalnasr@gmail.com')}
             >
               <Mail className="mr-2 w-5 h-5" />
               Send me an email
