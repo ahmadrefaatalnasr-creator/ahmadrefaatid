@@ -55,7 +55,7 @@ const Contact = () => {
                         href={item.link}
                         target={item.link.startsWith('http') ? '_blank' : undefined}
                         rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="text-muted-foreground hover:text-accent transition-colors"
+                        className="text-muted-foreground hover:text-accent transition-colors text-sm break-all"
                       >
                         {item.value}
                       </a>
