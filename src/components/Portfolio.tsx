@@ -5,28 +5,29 @@ import { Button } from '@/components/ui/button';
 const Portfolio = () => {
   const projects = [
     {
-      title: 'Interactive Leadership Training',
-      description: 'Comprehensive e-learning program for developing leadership skills with scenario-based learning and real-world applications.',
+      title: 'ASTRO Interactive Course',
+      description: 'Interactive e-learning course built with Articulate Storyline, featuring engaging multimedia content, assessments, and learner-centered design principles.',
+      category: 'E-learning Development',
+      tools: 'Articulate Storyline 360',
+      link: 'https://ahmadrefaat2024.github.io/ASTRO/',
+    },
+    {
+      title: 'Corporate Leadership Training',
+      description: 'Comprehensive e-learning program for developing leadership skills with scenario-based learning and real-world applications using ADDIE methodology.',
       category: 'Corporate Training',
       tools: 'Articulate 360, Adobe Illustrator',
     },
     {
-      title: 'Medical Procedures Course',
-      description: 'Engaging medical training course with 3D animations, simulations, and interactive assessments for healthcare professionals.',
-      category: 'Healthcare Education',
-      tools: 'Adobe Captivate, After Effects',
+      title: 'Youth Education Program',
+      description: 'Video-based courses designed for teens and children with age-appropriate pacing, visual storytelling, and curriculum mapping techniques.',
+      category: 'Youth Education',
+      tools: 'Camtasia, H5P, Video Production',
     },
     {
-      title: 'Sales Enablement Platform',
-      description: 'Gamified learning experience for sales teams featuring microlearning modules and performance tracking dashboards.',
-      category: 'Sales Training',
-      tools: 'H5P, Moodle, Custom Development',
-    },
-    {
-      title: 'Onboarding Experience',
-      description: 'Interactive onboarding program reducing time-to-productivity for new hires through engaging multimedia content.',
-      category: 'HR & Onboarding',
-      tools: 'Articulate Rise, Video Production',
+      title: 'Blended Learning Solutions',
+      description: 'Custom eLearning modules and blended learning programs with interactive content, accessibility compliance (WCAG), and responsive design.',
+      category: 'Blended Learning',
+      tools: 'Articulate Storyline, H5P, LMS',
     },
   ];
 
@@ -64,13 +65,16 @@ const Portfolio = () => {
                   <span className="text-sm text-muted-foreground">
                     {project.tools}
                   </span>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="text-accent hover:text-accent/80"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                  </Button>
+                  {project.link && (
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="text-accent hover:text-accent/80"
+                      onClick={() => window.open(project.link, '_blank')}
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
