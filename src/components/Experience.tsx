@@ -3,22 +3,22 @@ import { Briefcase } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      year: '2021 - Present',
-      title: 'Senior Instructional Designer',
-      company: 'Leading EdTech Company',
-      description: 'Led the design and development of interactive e-learning courses for corporate clients. Implemented innovative learning strategies that increased engagement by 45%.',
-    },
-    {
-      year: '2019 - 2021',
+      year: 'Apr 2025 - Present',
       title: 'E-learning Specialist',
-      company: 'Educational Institution',
-      description: 'Developed comprehensive online learning programs and managed LMS implementation. Trained faculty on best practices for online course delivery.',
+      company: 'Manaarah Education Solution',
+      description: 'Designed and developed custom eLearning modules and blended learning programs tailored to client needs. Applied instructional design models (ADDIE, Bloom\'s Taxonomy, Kolb) to create learner-centered experiences. Developed interactive content using Articulate Storyline and H5P, ensuring accessibility compliance (WCAG, responsive design).',
     },
     {
-      year: '2017 - 2019',
+      year: 'Nov 2024 - May 2025',
+      title: 'Instructional Designer (Teens and Children)',
+      company: 'Maven Academies',
+      description: 'Created full storyboards and scripts for video-based courses ensuring smooth narration and age-appropriate pacing. Collaborated with media teams to align visuals, narration, and interactivity. Applied visual storytelling and curriculum mapping techniques to keep learning outcomes engaging.',
+    },
+    {
+      year: 'Oct 2024 - Apr 2025',
       title: 'Instructional Designer',
-      company: 'Training Solutions Provider',
-      description: 'Created engaging learning materials and assessments for diverse audiences. Collaborated with subject matter experts to transform complex content into accessible learning experiences.',
+      company: 'LearnKhana',
+      description: 'Designed and developed engaging, interactive, and learner-centered educational content. Utilized instructional design models (ADDIE, SAM) and integrated multimedia elements (videos, animations, infographics). Worked with LMS platforms to deploy and track training programs.',
     },
   ];
 

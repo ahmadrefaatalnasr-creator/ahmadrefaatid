@@ -1,4 +1,4 @@
-import { Lightbulb, Palette, Code, Users, BookOpen, Layers } from 'lucide-react';
+import { Lightbulb, Palette, Code, Users, BookOpen, Layers, Video, MonitorPlay } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Skills = () => {
@@ -6,32 +6,42 @@ const Skills = () => {
     {
       icon: Lightbulb,
       title: 'Instructional Design',
-      description: 'ADDIE, SAM, Bloom\'s Taxonomy, Learning Objectives',
+      description: 'ADDIE, SAM, Bloom\'s Taxonomy, Kolb, Adult Learning Theories',
     },
     {
       icon: Code,
       title: 'E-learning Development',
-      description: 'Articulate 360, Adobe Captivate, H5P, SCORM',
+      description: 'Articulate Storyline 360, Adobe Captivate, H5P, SCORM, xAPI',
     },
     {
       icon: Palette,
-      title: 'Multimedia Design',
-      description: 'Adobe Creative Suite, Video Editing, Graphics',
+      title: 'Multimedia & Graphics',
+      description: 'Photoshop, Illustrator, InDesign, After Effects',
+    },
+    {
+      icon: Video,
+      title: 'Video Production',
+      description: 'Camtasia, Video Editing, Storyboarding, vILT',
     },
     {
       icon: Users,
       title: 'Learning Experience',
-      description: 'UX/UI for Learning, Gamification, Engagement',
+      description: 'Microlearning, Gamification, Assessment & Interactivity',
+    },
+    {
+      icon: Layers,
+      title: 'LMS & Standards',
+      description: 'Moodle, Learning Analytics, WCAG Accessibility',
     },
     {
       icon: BookOpen,
       title: 'Content Strategy',
-      description: 'Curriculum Development, Assessment Design',
+      description: 'Curriculum Mapping, Needs Analysis, Course Evaluation',
     },
     {
-      icon: Layers,
-      title: 'LMS Management',
-      description: 'Moodle, Canvas, Blackboard, Learning Analytics',
+      icon: MonitorPlay,
+      title: 'Business Skills',
+      description: 'Collaboration, Communication, Problem Solving, Presentations',
     },
   ];
 
@@ -41,7 +51,7 @@ const Skills = () => {
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
           Skills & Expertise
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {skills.map((skill, index) => {
             const Icon = skill.icon;
             return (

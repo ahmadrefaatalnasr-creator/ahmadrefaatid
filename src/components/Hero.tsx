@@ -19,13 +19,13 @@ const Hero = () => {
     >
       <div className="container mx-auto px-4 text-center text-white animate-fade-in">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          Ahmed
+          Ahmed Mohamed Refaat
         </h1>
         <p className="text-xl md:text-3xl mb-4 text-gray-200">
           Instructional Designer & E-learning Specialist
         </p>
         <p className="text-lg md:text-xl mb-12 text-gray-300 max-w-2xl mx-auto">
-          Creating engaging educational experiences that inspire learning and drive results
+          Designing engaging, learner-centered educational experiences that drive measurable results
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <Button

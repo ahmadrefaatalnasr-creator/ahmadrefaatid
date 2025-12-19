@@ -8,19 +8,21 @@ const About = () => {
           </h2>
           <div className="space-y-6 text-lg text-foreground/90 leading-relaxed">
             <p>
-              Hello! I'm Ahmed, an experienced Instructional Designer and E-learning Specialist based in Egypt. 
-              With a passion for creating meaningful educational experiences, I specialize in designing and 
-              developing engaging learning solutions that drive measurable results.
+              Instructional Designer and eLearning Specialist with a strong background in education, 
+              content development, and digital learning strategies. Experienced in designing and 
+              delivering engaging learning solutions that align with organizational goals and adult 
+              learning principles.
             </p>
             <p>
-              My approach combines pedagogical best practices with cutting-edge technology to create learning 
-              experiences that are not only effective but also enjoyable. I believe that great instructional 
-              design starts with understanding the learner and ends with transforming their capabilities.
+              Skilled in leveraging authoring tools (Articulate, Adobe CC, H5P, etc.), LMS platforms, 
+              and interactive media to create impactful training experiences. Proven expertise in 
+              instructional design models, needs analysis, and learner-centered design with a track 
+              record of building scalable eLearning programs across diverse industries.
             </p>
             <p>
-              Throughout my career, I've had the privilege of working with diverse organizations and learners, 
-              helping them achieve their educational goals through innovative e-learning solutions, interactive 
-              course design, and strategic learning implementations.
+              Adept at collaborating with cross-functional teams, leading content development processes, 
+              and ensuring clarity, engagement, and measurable learning outcomes. Awarded the Ideal 
+              Student for Faculty of Education (2021) and 5th Ideal Student for Egyptian Universities (2019).
             </p>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { Mail, MapPin, Linkedin, FileText } from 'lucide-react';
+import { Mail, MapPin, Linkedin, FileText, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -7,8 +7,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'ahmed@example.com',
-      link: 'mailto:ahmed@example.com',
+      value: 'ahmadrefaatalnasr@gmail.com',
+      link: 'mailto:ahmadrefaatalnasr@gmail.com',
     },
     {
       icon: MapPin,
@@ -19,7 +19,13 @@ const Contact = () => {
       icon: Linkedin,
       label: 'LinkedIn',
       value: 'Connect with me',
-      link: 'https://linkedin.com',
+      link: 'https://linkedin.com/in/ahmed-refaat',
+    },
+    {
+      icon: Globe,
+      label: 'Website',
+      value: 'ahmadrefaat.me',
+      link: 'https://www.ahmadrefaat.me',
     },
   ];
 
@@ -34,7 +40,7 @@ const Contact = () => {
         </p>
         
         <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {contactInfo.map((item, index) => {
               const Icon = item.icon;
               return (
@@ -47,6 +53,8 @@ const Contact = () => {
                     {item.link ? (
                       <a
                         href={item.link}
+                        target={item.link.startsWith('http') ? '_blank' : undefined}
+                        rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                         className="text-muted-foreground hover:text-accent transition-colors"
                       >
                         {item.value}
@@ -64,7 +72,7 @@ const Contact = () => {
             <Button
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8"
-              onClick={() => window.open('mailto:ahmed@example.com')}
+              onClick={() => window.open('mailto:ahmadrefaatalnasr@gmail.com')}
             >
               <Mail className="mr-2 w-5 h-5" />
               Send me an email
