@@ -1,23 +1,30 @@
 import { Mail, MapPin, Linkedin, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+
 const Contact = () => {
-  const contactInfo = [{
-    icon: Mail,
-    label: 'Email',
-    value: 'ahmed@example.com',
-    link: 'mailto:ahmed@example.com'
-  }, {
-    icon: MapPin,
-    label: 'Location',
-    value: 'Egypt'
-  }, {
-    icon: Linkedin,
-    label: 'LinkedIn',
-    value: 'Connect with me',
-    link: 'https://linkedin.com'
-  }];
-  return <section id="contact" className="py-20 bg-background">
+  const contactInfo = [
+    {
+      icon: Mail,
+      label: 'Email',
+      value: 'ahmed.m.refaat.2024@gmail.com',
+      link: 'mailto:ahmed.m.refaat.2024@gmail.com'
+    },
+    {
+      icon: MapPin,
+      label: 'Location',
+      value: 'Egypt'
+    },
+    {
+      icon: Linkedin,
+      label: 'LinkedIn',
+      value: 'Connect with me',
+      link: 'https://www.linkedin.com/in/ahmed-refaat-elearning-developer'
+    }
+  ];
+
+  return (
+    <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-primary">
           Get In Touch
@@ -29,23 +36,36 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {contactInfo.map((item, index) => {
-            const Icon = item.icon;
-            return <Card key={index} className="border-none shadow-md">
+              const Icon = item.icon;
+              return (
+                <Card key={index} className="border-none shadow-md">
                   <CardContent className="p-6 text-center">
                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 mb-4">
                       <Icon className="w-6 h-6 text-accent" />
                     </div>
                     <h3 className="font-semibold mb-2 text-primary">{item.label}</h3>
-                    {item.link ? <a href={item.link} className="text-muted-foreground hover:text-accent transition-colors">
+                    {item.link ? (
+                      <a 
+                        href={item.link} 
+                        className="text-xs md:text-sm text-muted-foreground hover:text-accent transition-colors whitespace-nowrap"
+                      >
                         {item.value}
-                      </a> : <p className="text-muted-foreground">{item.value}</p>}
+                      </a>
+                    ) : (
+                      <p className="text-muted-foreground">{item.value}</p>
+                    )}
                   </CardContent>
-                </Card>;
-          })}
+                </Card>
+              );
+            })}
           </div>
 
           <div className="text-center">
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8" onClick={() => window.open('mailto:ahmed@example.com')}>
+            <Button 
+              size="lg" 
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8" 
+              onClick={() => window.open('mailto:ahmed.m.refaat.2024@gmail.com')}
+            >
               <Mail className="mr-2 w-5 h-5" />
               Send me an email
             </Button>
@@ -56,6 +76,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Contact;
