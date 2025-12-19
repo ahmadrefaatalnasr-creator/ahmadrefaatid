@@ -24,7 +24,7 @@ const Hero = () => {
           <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8" onClick={scrollToAbout}>
             Explore My Work
           </Button>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary font-semibold px-8" onClick={() => document.querySelector('#contact')?.scrollIntoView({
+          <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8" onClick={() => document.querySelector('#contact')?.scrollIntoView({
           behavior: 'smooth'
         })}>
             Get In Touch
