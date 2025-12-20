@@ -19,7 +19,7 @@ const Contact = () => {
       icon: Linkedin,
       label: 'LinkedIn',
       value: 'Connect with me',
-      link: 'https://www.linkedin.com/in/ahmed-refaat-elearning-developer'
+      link: 'https://www.linkedin.com/in/ahmadrefaatalnasr/'
     }
   ];
 
