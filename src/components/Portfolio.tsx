@@ -55,6 +55,7 @@ const Portfolio = () => {
       category: 'Youth Education',
       categoryAr: 'تعليم الشباب',
       tools: 'Camtasia, H5P, Video Production',
+      link: 'https://docs.google.com/presentation/d/1Xwsiqy0dRRwiLxQ2Qvh9GNI_EUjGNuvL/edit?usp=drive_link&ouid=103121255332793306895&rtpof=true&sd=true',
       gradient: 'from-emerald-500 via-teal-500 to-cyan-600',
       Icon: GraduationCap,
     },
