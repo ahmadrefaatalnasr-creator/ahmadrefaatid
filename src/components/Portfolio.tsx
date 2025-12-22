@@ -40,6 +40,13 @@ const Portfolio = () => {
       tools: 'Scriptwriting, Storyboarding',
       link: '/scripts/Script_Social_engeneering.pdf',
     },
+    {
+      title: 'Arabic Numbers Course Storyboard',
+      description: 'استوري بورد لكورس تعليم الأرقام العربية للأطفال غير الناطقين بالعربية، يتضمن تصميم بصري جذاب وشخصيات كارتونية مع نطق الأرقام بالعربية والإنجليزية.',
+      category: 'Storyboarding',
+      tools: 'PowerPoint, Visual Design',
+      link: '/storyboards/Arabic_Numbers_Storyboard.pptx',
+    },
   ];
 
   return (
