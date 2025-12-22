@@ -45,7 +45,7 @@ const Portfolio = () => {
       description: 'استوري بورد لكورس تعليم الأرقام العربية للأطفال غير الناطقين بالعربية، يتضمن تصميم بصري جذاب وشخصيات كارتونية مع نطق الأرقام بالعربية والإنجليزية.',
       category: 'Storyboarding',
       tools: 'PowerPoint, Visual Design',
-      link: '/storyboards/Arabic_Numbers_Storyboard.pptx',
+      link: 'https://docs.google.com/presentation/d/1D9h6YMKDEebgiKxhmmgVxSbrFwrWe2VH/edit?usp=sharing&ouid=103121255332793306895&rtpof=true&sd=true',
     },
   ];
 
