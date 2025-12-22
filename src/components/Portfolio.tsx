@@ -166,7 +166,10 @@ const Card3D = ({ project, index, isVisible, language }: Card3DProps) => {
         transformStyle: 'preserve-3d'
       }}
     >
-      <Card className="group relative border-none shadow-lg hover:shadow-2xl overflow-hidden rounded-2xl cursor-pointer bg-card">
+      <Card 
+        className="group relative border-none shadow-lg hover:shadow-2xl overflow-hidden rounded-2xl cursor-pointer bg-card"
+        onClick={() => project.link && window.open(project.link, '_blank')}
+      >
         {/* Glare Effect */}
         <div 
           className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none z-10"
