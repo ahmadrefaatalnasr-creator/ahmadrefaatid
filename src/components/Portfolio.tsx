@@ -1,8 +1,11 @@
 import { ExternalLink } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Portfolio = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   const projects = [
     {
       title: 'ASTRO Interactive Course',
@@ -32,8 +35,12 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-secondary">
-      <div className="container mx-auto px-4">
+    <section 
+      id="portfolio" 
+      className="py-20 bg-secondary"
+      ref={ref as React.RefObject<HTMLElement>}
+    >
+      <div className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-primary">
           Portfolio
         </h2>
@@ -44,7 +51,8 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="border-none shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              className={`border-none shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
               <div className="h-48 bg-gradient-to-br from-primary to-primary/70 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all" />

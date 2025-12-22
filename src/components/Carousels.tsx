@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const carousels = [
   {
@@ -58,9 +59,15 @@ const carousels = [
 ];
 
 const Carousels = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section id="carousels" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section 
+      id="carousels" 
+      className="py-20 bg-muted/30"
+      ref={ref as React.RefObject<HTMLElement>}
+    >
+      <div className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Knowledge <span className="text-primary">Carousels</span>
@@ -81,7 +88,10 @@ const Carousels = () => {
             <CarouselContent className="-ml-4">
               {carousels.map((item, index) => (
                 <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="h-full bg-card border-border hover:shadow-lg transition-shadow duration-300">
+                  <Card 
+                    className={`h-full bg-card border-border hover:shadow-lg transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                    style={{ transitionDelay: `${index * 100}ms` }}
+                  >
                     <CardHeader className="space-y-2">
                       <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2">
                         <FileText className="w-6 h-6 text-primary" />

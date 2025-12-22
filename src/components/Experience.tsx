@@ -1,6 +1,9 @@
 import { Briefcase } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Experience = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   const experiences = [
     {
       year: 'Apr 2025 - Present',
@@ -23,8 +26,12 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section 
+      id="experience" 
+      className="py-20 bg-background"
+      ref={ref as React.RefObject<HTMLElement>}
+    >
+      <div className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
           Experience
         </h2>
@@ -33,8 +40,8 @@ const Experience = () => {
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className="relative pl-8 border-l-2 border-accent pb-8 last:pb-0 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`relative pl-8 border-l-2 border-accent pb-8 last:pb-0 transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
+                style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent" />
                 <div className="flex items-center gap-2 mb-2">
