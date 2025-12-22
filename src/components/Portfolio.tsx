@@ -84,8 +84,8 @@ const Portfolio = () => {
     {
       title: 'Arabic Numbers Course Storyboard',
       titleAr: 'ستوري بورد دورة الأرقام العربية',
-      description: 'استوري بورد لكورس تعليم الأرقام العربية للأطفال غير الناطقين بالعربية، يتضمن تصميم بصري جذاب وشخصيات كارتونية مع نطق الأرقام بالعربية والإنجليزية.',
-      descriptionAr: 'استوري بورد لكورس تعليم الأرقام العربية للأطفال غير الناطقين بالعربية، يتضمن تصميم بصري جذاب وشخصيات كارتونية مع نطق الأرقام بالعربية والإنجليزية.',
+      description: 'Storyboard for an Arabic numbers course for non-Arabic speaking children, featuring attractive visual design and cartoon characters with Arabic and English number pronunciation.',
+      descriptionAr: 'دورات قائمة على الفيديو مصممة للمراهقين والأطفال مع إيقاع مناسب للعمر وسرد بصري وتقنيات تخطيط المناهج.',
       category: 'Storyboarding',
       categoryAr: 'الستوري بورد',
       tools: 'PowerPoint, Visual Design',
