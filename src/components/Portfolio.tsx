@@ -82,18 +82,6 @@ const Portfolio = () => {
       gradient: 'from-slate-600 via-gray-700 to-zinc-800',
       Icon: Shield,
     },
-    {
-      title: 'Arabic Numbers Course Storyboard',
-      titleAr: 'ستوري بورد دورة الأرقام العربية',
-      description: 'Storyboard for an Arabic numbers course for non-Arabic speaking children, featuring attractive visual design and cartoon characters with Arabic and English number pronunciation.',
-      descriptionAr: 'دورات قائمة على الفيديو مصممة للمراهقين والأطفال مع إيقاع مناسب للعمر وسرد بصري وتقنيات تخطيط المناهج.',
-      category: 'Storyboarding',
-      categoryAr: 'الستوري بورد',
-      tools: 'PowerPoint, Visual Design',
-      link: 'https://docs.google.com/presentation/d/1D9h6YMKDEebgiKxhmmgVxSbrFwrWe2VH/edit?usp=sharing&ouid=103121255332793306895&rtpof=true&sd=true',
-      gradient: 'from-sky-500 via-blue-500 to-indigo-600',
-      Icon: Hash,
-    },
   ];
 
   return (
