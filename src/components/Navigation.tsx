@@ -35,7 +35,9 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/95 backdrop-blur-md shadow-md' : 'bg-transparent'
+        isScrolled 
+          ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-border/50' 
+          : 'bg-primary/80 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-4 py-4">
@@ -46,13 +48,17 @@ const Navigation = () => {
               e.preventDefault();
               scrollToSection('#home');
             }}
-            className="text-2xl font-bold text-primary hover:text-accent transition-colors"
+            className={`text-2xl font-bold transition-colors ${
+              isScrolled 
+                ? 'text-primary hover:text-accent' 
+                : 'text-white hover:text-accent'
+            }`}
           >
             Ahmed
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -61,21 +67,30 @@ const Navigation = () => {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="text-foreground hover:text-accent transition-colors font-medium"
+                className={`relative px-3 py-2 rounded-lg font-medium transition-all duration-300 ${
+                  isScrolled 
+                    ? 'text-foreground hover:text-accent hover:bg-accent/10' 
+                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                }`}
               >
                 {link.label}
               </a>
             ))}
-            <LanguageSwitcher />
+            <div className={`ms-2 ${isScrolled ? '' : '[&_button]:text-white [&_button]:hover:text-accent'}`}>
+              <LanguageSwitcher />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-2">
-            <LanguageSwitcher />
+            <div className={isScrolled ? '' : '[&_button]:text-white'}>
+              <LanguageSwitcher />
+            </div>
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className={isScrolled ? '' : 'text-white hover:text-accent hover:bg-white/10'}
             >
               {isMobileMenuOpen ? <X /> : <Menu />}
             </Button>
@@ -84,7 +99,9 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 animate-fade-in">
+          <div className={`md:hidden mt-4 pb-4 animate-fade-in rounded-lg ${
+            isScrolled ? 'bg-card' : 'bg-primary/90 backdrop-blur-md'
+          }`}>
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -93,7 +110,11 @@ const Navigation = () => {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="block py-2 text-foreground hover:text-accent transition-colors font-medium"
+                className={`block py-3 px-4 font-medium transition-colors ${
+                  isScrolled 
+                    ? 'text-foreground hover:text-accent hover:bg-accent/10' 
+                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                }`}
               >
                 {link.label}
               </a>
