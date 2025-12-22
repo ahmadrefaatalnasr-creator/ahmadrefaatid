@@ -15,10 +15,11 @@ const Portfolio = () => {
       link: 'https://ahmadrefaat2024.github.io/ASTRO/',
     },
     {
-      title: 'Corporate Leadership Training',
-      description: 'Comprehensive e-learning program for developing leadership skills with scenario-based learning and real-world applications using ADDIE methodology.',
-      category: 'Corporate Training',
-      tools: 'Articulate 360, Adobe Illustrator',
+      title: 'Interactive Video - Outroch',
+      description: 'فيديو تفاعلي احترافي يقدم تجربة تعليمية غامرة مع عناصر تفاعلية متقدمة وتصميم جذاب.',
+      category: 'Interactive Video',
+      tools: 'Camtasia',
+      link: 'https://ahmadrefaat2024.github.io/outroch5/',
     },
     {
       title: 'Youth Education Program',
