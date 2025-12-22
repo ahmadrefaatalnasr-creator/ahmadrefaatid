@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useState, useRef } from 'react';
+
 
 interface Project {
   title: string;
@@ -92,7 +92,7 @@ const Portfolio = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {projects.map((project, index) => (
-            <Card3D 
+            <ProjectCard 
               key={index} 
               project={project} 
               index={index} 
@@ -106,69 +106,28 @@ const Portfolio = () => {
   );
 };
 
-interface Card3DProps {
+interface ProjectCardProps {
   project: Project;
   index: number;
   isVisible: boolean;
   language: 'en' | 'ar';
 }
 
-const Card3D = ({ project, index, isVisible, language }: Card3DProps) => {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const [transform, setTransform] = useState('');
-  const [glarePosition, setGlarePosition] = useState({ x: 50, y: 50 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    
-    const card = cardRef.current;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    const rotateX = (y - centerY) / 10;
-    const rotateY = (centerX - x) / 10;
-    
-    setTransform(`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`);
-    setGlarePosition({ x: (x / rect.width) * 100, y: (y / rect.height) * 100 });
-  };
-
-  const handleMouseLeave = () => {
-    setTransform('perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)');
-    setGlarePosition({ x: 50, y: 50 });
-  };
-
+const ProjectCard = ({ project, index, isVisible, language }: ProjectCardProps) => {
   const IconComponent = project.Icon;
   const isArabic = language === 'ar';
 
   return (
     <div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className={`transition-all duration-200 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
-      style={{ 
-        transform,
-        transitionDelay: `${index * 100}ms`,
-        transformStyle: 'preserve-3d'
-      }}
+      className={`transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+      style={{ transitionDelay: `${index * 100}ms` }}
     >
       <Card 
-        className="group relative border-none shadow-lg hover:shadow-2xl overflow-hidden rounded-2xl cursor-pointer bg-card"
+        className="group relative border-none shadow-lg hover:shadow-xl overflow-hidden rounded-2xl cursor-pointer bg-card transition-shadow duration-300"
         onClick={() => project.link && window.open(project.link, '_blank')}
       >
-        {/* Glare Effect */}
-        <div 
-          className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none z-10"
-          style={{
-            background: `radial-gradient(circle at ${glarePosition.x}% ${glarePosition.y}%, rgba(255,255,255,0.8) 0%, transparent 50%)`
-          }}
-        />
-
         {/* Gradient Header with Icon */}
-        <div className={`h-40 bg-gradient-to-br ${project.gradient} relative overflow-hidden`} style={{ transform: 'translateZ(20px)' }}>
+        <div className={`h-40 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
           {/* Animated Background Pattern */}
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-4 left-4 w-20 h-20 rounded-full bg-white/20 blur-xl group-hover:scale-150 transition-transform duration-700" />
@@ -176,14 +135,14 @@ const Card3D = ({ project, index, isVisible, language }: Card3DProps) => {
           </div>
           
           {/* Icon */}
-          <div className="absolute inset-0 flex items-center justify-center" style={{ transform: 'translateZ(40px)' }}>
+          <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-500 border border-white/30 shadow-lg">
               <IconComponent className="w-10 h-10 text-white drop-shadow-lg" />
             </div>
           </div>
           
           {/* Category Badge */}
-          <div className="absolute top-4 end-4" style={{ transform: 'translateZ(30px)' }}>
+          <div className="absolute top-4 end-4">
             <span className="text-white/90 text-xs font-medium px-3 py-1.5 bg-white/20 backdrop-blur-sm rounded-full border border-white/30">
               {isArabic ? project.categoryAr : project.category}
             </span>
@@ -193,7 +152,7 @@ const Card3D = ({ project, index, isVisible, language }: Card3DProps) => {
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
         </div>
 
-        <CardContent className="p-5 bg-card relative" style={{ transform: 'translateZ(10px)' }}>
+        <CardContent className="p-5 bg-card">
           <h3 className="text-lg font-bold mb-2 text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-1">
             {isArabic ? project.titleAr : project.title}
           </h3>
@@ -209,7 +168,10 @@ const Card3D = ({ project, index, isVisible, language }: Card3DProps) => {
                 variant="ghost"
                 size="sm"
                 className="text-accent hover:text-accent hover:bg-accent/10 rounded-full h-8 w-8 p-0"
-                onClick={() => window.open(project.link, '_blank')}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(project.link, '_blank');
+                }}
               >
                 <ExternalLink className="w-4 h-4" />
               </Button>
