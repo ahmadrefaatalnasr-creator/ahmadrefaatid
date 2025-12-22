@@ -60,17 +60,6 @@ const Portfolio = () => {
       Icon: GraduationCap,
     },
     {
-      title: 'Blended Learning Solutions',
-      titleAr: 'حلول التعلم المدمج',
-      description: 'Custom eLearning modules and blended learning programs with interactive content, accessibility compliance (WCAG), and responsive design.',
-      descriptionAr: 'وحدات تعليم إلكتروني مخصصة وبرامج تعلم مدمج مع محتوى تفاعلي والامتثال لمعايير الوصول (WCAG) والتصميم المتجاوب.',
-      category: 'Blended Learning',
-      categoryAr: 'التعلم المدمج',
-      tools: 'Articulate Storyline, H5P, LMS',
-      gradient: 'from-amber-500 via-orange-500 to-red-500',
-      Icon: BookOpen,
-    },
-    {
       title: 'Cybersecurity Awareness Script',
       titleAr: 'سكربت التوعية بالأمن السيبراني',
       description: 'سكربت فيديو توعوي لشركة سايبر سيكيورتي متخصصة في تقديم توعية للشركات في مجال الأمن السيبراني من خلال فيديوهات كارتون تعليمية عن الهندسة الاجتماعية.',
