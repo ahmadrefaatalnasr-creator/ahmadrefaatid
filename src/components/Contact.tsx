@@ -87,7 +87,7 @@ const Contact = () => {
               size="lg" 
               variant="outline" 
               className="font-semibold px-8"
-              onClick={() => window.open('/Ahmed_Refaat_CV.pdf', '_blank')}
+              onClick={() => window.open('https://drive.google.com/file/d/1Tl5tTNnrfq1wvDAmTxkN7BqAGszd8qph/view?usp=drive_link', '_blank')}
             >
               <FileText className="me-2 w-5 h-5" />
               {t('contact.downloadCV')}
