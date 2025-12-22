@@ -2,12 +2,16 @@ import { ExternalLink, Sparkles, Rocket, Video, GraduationCap, BookOpen, Shield,
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { useState, useRef } from 'react';
 
 interface Project {
   title: string;
+  titleAr: string;
   description: string;
+  descriptionAr: string;
   category: string;
+  categoryAr: string;
   tools: string;
   link?: string;
   gradient: string;
@@ -16,12 +20,16 @@ interface Project {
 
 const Portfolio = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const { t, language } = useLanguage();
 
   const projects: Project[] = [
     {
       title: 'ASTRO Interactive Course',
+      titleAr: 'دورة ASTRO التفاعلية',
       description: 'Interactive e-learning course built with Articulate Storyline, featuring engaging multimedia content, assessments, and learner-centered design principles.',
+      descriptionAr: 'دورة تعليم إلكتروني تفاعلية مبنية باستخدام Articulate Storyline، تتضمن محتوى وسائط متعددة جذاب وتقييمات ومبادئ تصميم متمحورة حول المتعلم.',
       category: 'E-learning Development',
+      categoryAr: 'تطوير التعليم الإلكتروني',
       tools: 'Articulate Storyline 360',
       link: 'https://ahmadrefaat2024.github.io/ASTRO/',
       gradient: 'from-violet-600 via-purple-600 to-indigo-700',
@@ -29,8 +37,11 @@ const Portfolio = () => {
     },
     {
       title: 'Interactive Video - Outroch',
+      titleAr: 'فيديو تفاعلي - Outroch',
       description: 'فيديو تفاعلي احترافي يقدم تجربة تعليمية غامرة مع عناصر تفاعلية متقدمة وتصميم جذاب.',
+      descriptionAr: 'فيديو تفاعلي احترافي يقدم تجربة تعليمية غامرة مع عناصر تفاعلية متقدمة وتصميم جذاب.',
       category: 'Interactive Video',
+      categoryAr: 'فيديو تفاعلي',
       tools: 'Camtasia',
       link: 'https://ahmadrefaat2024.github.io/outroch5/',
       gradient: 'from-rose-500 via-pink-500 to-fuchsia-600',
@@ -38,24 +49,33 @@ const Portfolio = () => {
     },
     {
       title: 'Youth Education Program',
+      titleAr: 'برنامج تعليم الشباب',
       description: 'Video-based courses designed for teens and children with age-appropriate pacing, visual storytelling, and curriculum mapping techniques.',
+      descriptionAr: 'دورات قائمة على الفيديو مصممة للمراهقين والأطفال مع إيقاع مناسب للعمر وسرد بصري وتقنيات تخطيط المناهج.',
       category: 'Youth Education',
+      categoryAr: 'تعليم الشباب',
       tools: 'Camtasia, H5P, Video Production',
       gradient: 'from-emerald-500 via-teal-500 to-cyan-600',
       Icon: GraduationCap,
     },
     {
       title: 'Blended Learning Solutions',
+      titleAr: 'حلول التعلم المدمج',
       description: 'Custom eLearning modules and blended learning programs with interactive content, accessibility compliance (WCAG), and responsive design.',
+      descriptionAr: 'وحدات تعليم إلكتروني مخصصة وبرامج تعلم مدمج مع محتوى تفاعلي والامتثال لمعايير الوصول (WCAG) والتصميم المتجاوب.',
       category: 'Blended Learning',
+      categoryAr: 'التعلم المدمج',
       tools: 'Articulate Storyline, H5P, LMS',
       gradient: 'from-amber-500 via-orange-500 to-red-500',
       Icon: BookOpen,
     },
     {
       title: 'Cybersecurity Awareness Script',
+      titleAr: 'سكربت التوعية بالأمن السيبراني',
       description: 'سكربت فيديو توعوي لشركة سايبر سيكيورتي متخصصة في تقديم توعية للشركات في مجال الأمن السيبراني من خلال فيديوهات كارتون تعليمية عن الهندسة الاجتماعية.',
+      descriptionAr: 'سكربت فيديو توعوي لشركة سايبر سيكيورتي متخصصة في تقديم توعية للشركات في مجال الأمن السيبراني من خلال فيديوهات كارتون تعليمية عن الهندسة الاجتماعية.',
       category: 'Script Writing',
+      categoryAr: 'كتابة السكربت',
       tools: 'Scriptwriting, Storyboarding',
       link: 'https://drive.google.com/file/d/14T1XMgUBYiJO4LkDNjwhrfHDiLEWAWoB/view?usp=sharing',
       gradient: 'from-slate-600 via-gray-700 to-zinc-800',
@@ -63,8 +83,11 @@ const Portfolio = () => {
     },
     {
       title: 'Arabic Numbers Course Storyboard',
+      titleAr: 'ستوري بورد دورة الأرقام العربية',
       description: 'استوري بورد لكورس تعليم الأرقام العربية للأطفال غير الناطقين بالعربية، يتضمن تصميم بصري جذاب وشخصيات كارتونية مع نطق الأرقام بالعربية والإنجليزية.',
+      descriptionAr: 'استوري بورد لكورس تعليم الأرقام العربية للأطفال غير الناطقين بالعربية، يتضمن تصميم بصري جذاب وشخصيات كارتونية مع نطق الأرقام بالعربية والإنجليزية.',
       category: 'Storyboarding',
+      categoryAr: 'الستوري بورد',
       tools: 'PowerPoint, Visual Design',
       link: 'https://docs.google.com/presentation/d/1D9h6YMKDEebgiKxhmmgVxSbrFwrWe2VH/edit?usp=sharing&ouid=103121255332793306895&rtpof=true&sd=true',
       gradient: 'from-sky-500 via-blue-500 to-indigo-600',
@@ -82,12 +105,12 @@ const Portfolio = () => {
         <div className="flex items-center justify-center gap-3 mb-4">
           <Sparkles className="w-8 h-8 text-accent" />
           <h2 className="text-4xl md:text-5xl font-bold text-center text-primary">
-            Portfolio
+            {t('portfolio.title')}
           </h2>
           <Sparkles className="w-8 h-8 text-accent" />
         </div>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          A selection of projects showcasing innovative instructional design and e-learning development
+          {t('portfolio.subtitle')}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {projects.map((project, index) => (
@@ -95,7 +118,8 @@ const Portfolio = () => {
               key={index} 
               project={project} 
               index={index} 
-              isVisible={isVisible} 
+              isVisible={isVisible}
+              language={language}
             />
           ))}
         </div>
@@ -108,9 +132,10 @@ interface Card3DProps {
   project: Project;
   index: number;
   isVisible: boolean;
+  language: 'en' | 'ar';
 }
 
-const Card3D = ({ project, index, isVisible }: Card3DProps) => {
+const Card3D = ({ project, index, isVisible, language }: Card3DProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [transform, setTransform] = useState('');
   const [glarePosition, setGlarePosition] = useState({ x: 50, y: 50 });
@@ -138,6 +163,7 @@ const Card3D = ({ project, index, isVisible }: Card3DProps) => {
   };
 
   const IconComponent = project.Icon;
+  const isArabic = language === 'ar';
 
   return (
     <div
@@ -176,9 +202,9 @@ const Card3D = ({ project, index, isVisible }: Card3DProps) => {
           </div>
           
           {/* Category Badge */}
-          <div className="absolute top-4 right-4" style={{ transform: 'translateZ(30px)' }}>
+          <div className="absolute top-4 end-4" style={{ transform: 'translateZ(30px)' }}>
             <span className="text-white/90 text-xs font-medium px-3 py-1.5 bg-white/20 backdrop-blur-sm rounded-full border border-white/30">
-              {project.category}
+              {isArabic ? project.categoryAr : project.category}
             </span>
           </div>
 
@@ -188,10 +214,10 @@ const Card3D = ({ project, index, isVisible }: Card3DProps) => {
 
         <CardContent className="p-5 bg-card relative" style={{ transform: 'translateZ(10px)' }}>
           <h3 className="text-lg font-bold mb-2 text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-1">
-            {project.title}
+            {isArabic ? project.titleAr : project.title}
           </h3>
           <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-3">
-            {project.description}
+            {isArabic ? project.descriptionAr : project.description}
           </p>
           <div className="flex items-center justify-between pt-3 border-t border-border/50">
             <span className="text-xs text-muted-foreground/80 font-medium">

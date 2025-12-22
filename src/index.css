@@ -116,4 +116,8 @@ All colors MUST be HSL.
   html {
     scroll-behavior: smooth;
   }
+
+  .font-arabic {
+    font-family: 'Tajawal', 'Cairo', 'Noto Sans Arabic', sans-serif;
+  }
 }

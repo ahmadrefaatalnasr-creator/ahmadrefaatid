@@ -1,50 +1,52 @@
 import { Lightbulb, Palette, Code, Users, BookOpen, Layers, Video, MonitorPlay } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Skills = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const { t } = useLanguage();
 
   const skills = [
     {
       icon: Lightbulb,
-      title: 'Instructional Design',
-      description: 'ADDIE, SAM, Bloom\'s Taxonomy, Kolb, Adult Learning Theories',
+      titleKey: 'skills.instructional',
+      descKey: 'skills.instructional.desc',
     },
     {
       icon: Code,
-      title: 'E-learning Development',
-      description: 'Articulate Storyline 360, Adobe Captivate, H5P, SCORM, xAPI',
+      titleKey: 'skills.elearning',
+      descKey: 'skills.elearning.desc',
     },
     {
       icon: Palette,
-      title: 'Multimedia & Graphics',
-      description: 'Photoshop, Illustrator, InDesign, After Effects',
+      titleKey: 'skills.multimedia',
+      descKey: 'skills.multimedia.desc',
     },
     {
       icon: Video,
-      title: 'Video Production',
-      description: 'Camtasia, Video Editing, Storyboarding, vILT',
+      titleKey: 'skills.video',
+      descKey: 'skills.video.desc',
     },
     {
       icon: Users,
-      title: 'Learning Experience',
-      description: 'Microlearning, Gamification, Assessment & Interactivity',
+      titleKey: 'skills.learning',
+      descKey: 'skills.learning.desc',
     },
     {
       icon: Layers,
-      title: 'LMS & Standards',
-      description: 'Moodle, Learning Analytics, WCAG Accessibility',
+      titleKey: 'skills.lms',
+      descKey: 'skills.lms.desc',
     },
     {
       icon: BookOpen,
-      title: 'Content Strategy',
-      description: 'Curriculum Mapping, Needs Analysis, Course Evaluation',
+      titleKey: 'skills.content',
+      descKey: 'skills.content.desc',
     },
     {
       icon: MonitorPlay,
-      title: 'Business Skills',
-      description: 'Collaboration, Communication, Problem Solving, Presentations',
+      titleKey: 'skills.business',
+      descKey: 'skills.business.desc',
     },
   ];
 
@@ -56,7 +58,7 @@ const Skills = () => {
     >
       <div className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
-          Skills & Expertise
+          {t('skills.title')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {skills.map((skill, index) => {
@@ -69,15 +71,15 @@ const Skills = () => {
               >
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="bg-accent/10 p-3 rounded-lg">
+                    <div className="bg-accent/10 p-3 rounded-lg shrink-0">
                       <Icon className="w-6 h-6 text-accent" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg mb-2 text-primary">
-                        {skill.title}
+                        {t(skill.titleKey)}
                       </h3>
                       <p className="text-muted-foreground text-sm">
-                        {skill.description}
+                        {t(skill.descKey)}
                       </p>
                     </div>
                   </div>

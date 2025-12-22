@@ -1,7 +1,9 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const About = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const { t } = useLanguage();
 
   return (
     <section 
@@ -12,26 +14,12 @@ const About = () => {
       <div className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
-            About Me
+            {t('about.title')}
           </h2>
           <div className="space-y-6 text-lg text-foreground/90 leading-relaxed">
-            <p>
-              Instructional Designer and eLearning Specialist with a strong background in education, 
-              content development, and digital learning strategies. Experienced in designing and 
-              delivering engaging learning solutions that align with organizational goals and adult 
-              learning principles.
-            </p>
-            <p>
-              Skilled in leveraging authoring tools (Articulate, Adobe CC, H5P, etc.), LMS platforms, 
-              and interactive media to create impactful training experiences. Proven expertise in 
-              instructional design models, needs analysis, and learner-centered design with a track 
-              record of building scalable eLearning programs across diverse industries.
-            </p>
-            <p>
-              Adept at collaborating with cross-functional teams, leading content development processes, 
-              and ensuring clarity, engagement, and measurable learning outcomes. Awarded the Ideal 
-              Student for Faculty of Education (2021) and 5th Ideal Student for Egyptian Universities (2019).
-            </p>
+            <p>{t('about.p1')}</p>
+            <p>{t('about.p2')}</p>
+            <p>{t('about.p3')}</p>
           </div>
         </div>
       </div>
