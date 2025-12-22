@@ -1,12 +1,22 @@
-import { ExternalLink, Sparkles } from 'lucide-react';
+import { ExternalLink, Sparkles, Rocket, Video, GraduationCap, BookOpen, Shield, Hash, LucideIcon } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
+interface Project {
+  title: string;
+  description: string;
+  category: string;
+  tools: string;
+  link?: string;
+  gradient: string;
+  Icon: LucideIcon;
+}
+
 const Portfolio = () => {
   const { ref, isVisible } = useScrollAnimation();
 
-  const projects = [
+  const projects: Project[] = [
     {
       title: 'ASTRO Interactive Course',
       description: 'Interactive e-learning course built with Articulate Storyline, featuring engaging multimedia content, assessments, and learner-centered design principles.',
@@ -14,7 +24,7 @@ const Portfolio = () => {
       tools: 'Articulate Storyline 360',
       link: 'https://ahmadrefaat2024.github.io/ASTRO/',
       gradient: 'from-violet-600 via-purple-600 to-indigo-700',
-      icon: '🚀',
+      Icon: Rocket,
     },
     {
       title: 'Interactive Video - Outroch',
@@ -23,7 +33,7 @@ const Portfolio = () => {
       tools: 'Camtasia',
       link: 'https://ahmadrefaat2024.github.io/outroch5/',
       gradient: 'from-rose-500 via-pink-500 to-fuchsia-600',
-      icon: '🎬',
+      Icon: Video,
     },
     {
       title: 'Youth Education Program',
@@ -31,7 +41,7 @@ const Portfolio = () => {
       category: 'Youth Education',
       tools: 'Camtasia, H5P, Video Production',
       gradient: 'from-emerald-500 via-teal-500 to-cyan-600',
-      icon: '🎓',
+      Icon: GraduationCap,
     },
     {
       title: 'Blended Learning Solutions',
@@ -39,7 +49,7 @@ const Portfolio = () => {
       category: 'Blended Learning',
       tools: 'Articulate Storyline, H5P, LMS',
       gradient: 'from-amber-500 via-orange-500 to-red-500',
-      icon: '📚',
+      Icon: BookOpen,
     },
     {
       title: 'Cybersecurity Awareness Script',
@@ -48,7 +58,7 @@ const Portfolio = () => {
       tools: 'Scriptwriting, Storyboarding',
       link: 'https://drive.google.com/file/d/14T1XMgUBYiJO4LkDNjwhrfHDiLEWAWoB/view?usp=sharing',
       gradient: 'from-slate-600 via-gray-700 to-zinc-800',
-      icon: '🔐',
+      Icon: Shield,
     },
     {
       title: 'Arabic Numbers Course Storyboard',
@@ -57,7 +67,7 @@ const Portfolio = () => {
       tools: 'PowerPoint, Visual Design',
       link: 'https://docs.google.com/presentation/d/1D9h6YMKDEebgiKxhmmgVxSbrFwrWe2VH/edit?usp=sharing&ouid=103121255332793306895&rtpof=true&sd=true',
       gradient: 'from-sky-500 via-blue-500 to-indigo-600',
-      icon: '🔢',
+      Icon: Hash,
     },
   ];
 
@@ -79,66 +89,69 @@ const Portfolio = () => {
           A selection of projects showcasing innovative instructional design and e-learning development
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {projects.map((project, index) => (
-            <Card
-              key={index}
-              className={`group relative border-none shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden rounded-2xl cursor-pointer transform hover:-translate-y-2 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              {/* Gradient Header with Icon */}
-              <div className={`h-40 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
-                {/* Animated Background Pattern */}
-                <div className="absolute inset-0 opacity-20">
-                  <div className="absolute top-4 left-4 w-20 h-20 rounded-full bg-white/20 blur-xl group-hover:scale-150 transition-transform duration-700" />
-                  <div className="absolute bottom-4 right-4 w-32 h-32 rounded-full bg-white/10 blur-2xl group-hover:scale-125 transition-transform duration-700" />
-                </div>
-                
-                {/* Icon */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-6xl group-hover:scale-125 transition-transform duration-500 drop-shadow-lg">
-                    {project.icon}
-                  </span>
-                </div>
-                
-                {/* Category Badge */}
-                <div className="absolute top-4 right-4">
-                  <span className="text-white/90 text-xs font-medium px-3 py-1.5 bg-white/20 backdrop-blur-sm rounded-full border border-white/30">
-                    {project.category}
-                  </span>
+          {projects.map((project, index) => {
+            const IconComponent = project.Icon;
+            return (
+              <Card
+                key={index}
+                className={`group relative border-none shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden rounded-2xl cursor-pointer transform hover:-translate-y-2 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                {/* Gradient Header with Icon */}
+                <div className={`h-40 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
+                  {/* Animated Background Pattern */}
+                  <div className="absolute inset-0 opacity-20">
+                    <div className="absolute top-4 left-4 w-20 h-20 rounded-full bg-white/20 blur-xl group-hover:scale-150 transition-transform duration-700" />
+                    <div className="absolute bottom-4 right-4 w-32 h-32 rounded-full bg-white/10 blur-2xl group-hover:scale-125 transition-transform duration-700" />
+                  </div>
+                  
+                  {/* Icon */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-500 border border-white/30">
+                      <IconComponent className="w-10 h-10 text-white drop-shadow-lg" />
+                    </div>
+                  </div>
+                  
+                  {/* Category Badge */}
+                  <div className="absolute top-4 right-4">
+                    <span className="text-white/90 text-xs font-medium px-3 py-1.5 bg-white/20 backdrop-blur-sm rounded-full border border-white/30">
+                      {project.category}
+                    </span>
+                  </div>
+
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
                 </div>
 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-              </div>
+                <CardContent className="p-5 bg-card">
+                  <h3 className="text-lg font-bold mb-2 text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-1">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-3">
+                    {project.description}
+                  </p>
+                  <div className="flex items-center justify-between pt-3 border-t border-border/50">
+                    <span className="text-xs text-muted-foreground/80 font-medium">
+                      {project.tools}
+                    </span>
+                    {project.link && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="text-accent hover:text-accent hover:bg-accent/10 rounded-full h-8 w-8 p-0"
+                        onClick={() => window.open(project.link, '_blank')}
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </Button>
+                    )}
+                  </div>
+                </CardContent>
 
-              <CardContent className="p-5 bg-card">
-                <h3 className="text-lg font-bold mb-2 text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-1">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-3">
-                  {project.description}
-                </p>
-                <div className="flex items-center justify-between pt-3 border-t border-border/50">
-                  <span className="text-xs text-muted-foreground/80 font-medium">
-                    {project.tools}
-                  </span>
-                  {project.link && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-accent hover:text-accent hover:bg-accent/10 rounded-full h-8 w-8 p-0"
-                      onClick={() => window.open(project.link, '_blank')}
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                    </Button>
-                  )}
-                </div>
-              </CardContent>
-
-              {/* Bottom Gradient Line */}
-              <div className={`h-1 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-            </Card>
-          ))}
+                {/* Bottom Gradient Line */}
+                <div className={`h-1 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
