@@ -33,6 +33,13 @@ const Portfolio = () => {
       category: 'Blended Learning',
       tools: 'Articulate Storyline, H5P, LMS',
     },
+    {
+      title: 'Cybersecurity Awareness Script',
+      description: 'سكربت فيديو توعوي لشركة سايبر سيكيورتي متخصصة في تقديم توعية للشركات في مجال الأمن السيبراني من خلال فيديوهات كارتون تعليمية عن الهندسة الاجتماعية.',
+      category: 'Script Writing',
+      tools: 'Scriptwriting, Storyboarding',
+      link: '/scripts/Script_Social_engeneering.pdf',
+    },
   ];
 
   return (
