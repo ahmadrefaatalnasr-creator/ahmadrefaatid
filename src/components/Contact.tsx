@@ -83,7 +83,12 @@ const Contact = () => {
               <Mail className="me-2 w-5 h-5" />
               {t('contact.sendEmail')}
             </Button>
-            <Button size="lg" variant="outline" className="font-semibold px-8">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="font-semibold px-8"
+              onClick={() => window.open('/Ahmed_Refaat_CV.pdf', '_blank')}
+            >
               <FileText className="me-2 w-5 h-5" />
               {t('contact.downloadCV')}
             </Button>
