@@ -38,7 +38,7 @@ const Portfolio = () => {
       description: 'سكربت فيديو توعوي لشركة سايبر سيكيورتي متخصصة في تقديم توعية للشركات في مجال الأمن السيبراني من خلال فيديوهات كارتون تعليمية عن الهندسة الاجتماعية.',
       category: 'Script Writing',
       tools: 'Scriptwriting, Storyboarding',
-      link: '/scripts/Script_Social_engeneering.pdf',
+      link: 'https://drive.google.com/file/d/14T1XMgUBYiJO4LkDNjwhrfHDiLEWAWoB/view?usp=sharing',
     },
     {
       title: 'Arabic Numbers Course Storyboard',
