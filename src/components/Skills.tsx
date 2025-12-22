@@ -1,7 +1,10 @@
 import { Lightbulb, Palette, Code, Users, BookOpen, Layers, Video, MonitorPlay } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Skills = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   const skills = [
     {
       icon: Lightbulb,
@@ -46,8 +49,12 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-secondary">
-      <div className="container mx-auto px-4">
+    <section 
+      id="skills" 
+      className="py-20 bg-secondary"
+      ref={ref as React.RefObject<HTMLElement>}
+    >
+      <div className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
           Skills & Expertise
         </h2>
@@ -57,7 +64,8 @@ const Skills = () => {
             return (
               <Card
                 key={index}
-                className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className={`border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
