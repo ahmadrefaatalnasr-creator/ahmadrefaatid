@@ -9,6 +9,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const carousels = [
   {
@@ -60,6 +61,8 @@ const carousels = [
 
 const Carousels = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const { t, language } = useLanguage();
+  const isArabic = language === 'ar';
 
   return (
     <section 
@@ -70,10 +73,18 @@ const Carousels = () => {
       <div className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            Knowledge <span className="text-primary">Carousels</span>
+            {isArabic ? (
+              <>
+                <span className="text-primary">{t('carousels.titleHighlight')}</span> {t('carousels.title')}
+              </>
+            ) : (
+              <>
+                {t('carousels.title')} <span className="text-primary">{t('carousels.titleHighlight')}</span>
+              </>
+            )}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Educational resources and insights I've created to share knowledge in the e-learning community
+            {t('carousels.subtitle')}
           </p>
         </div>
 
@@ -97,10 +108,10 @@ const Carousels = () => {
                         <FileText className="w-6 h-6 text-primary" />
                       </div>
                       <CardTitle className="text-lg text-foreground leading-tight">
-                        {item.title}
+                        {isArabic ? item.titleAr : item.title}
                       </CardTitle>
-                      <p className="text-sm text-muted-foreground font-arabic" dir="rtl">
-                        {item.titleAr}
+                      <p className="text-sm text-muted-foreground" dir={isArabic ? 'ltr' : 'rtl'}>
+                        {isArabic ? item.title : item.titleAr}
                       </p>
                     </CardHeader>
                     <CardContent>
@@ -109,16 +120,16 @@ const Carousels = () => {
                         className="w-full"
                         onClick={() => window.open(item.file, '_blank')}
                       >
-                        <Download className="w-4 h-4 mr-2" />
-                        View / Download
+                        <Download className="w-4 h-4 me-2" />
+                        {t('carousels.download')}
                       </Button>
                     </CardContent>
                   </Card>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-0" />
-            <CarouselNext className="right-0" />
+            <CarouselPrevious className="start-0" />
+            <CarouselNext className="end-0" />
           </Carousel>
         </div>
       </div>

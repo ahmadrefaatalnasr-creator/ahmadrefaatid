@@ -1,27 +1,29 @@
 import { Briefcase } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Experience = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const { t } = useLanguage();
 
   const experiences = [
     {
-      year: 'Apr 2025 - Present',
-      title: 'E-learning Specialist',
-      company: 'Manaarah Education Solution',
-      description: 'Designed and developed custom eLearning modules and blended learning programs tailored to client needs. Applied instructional design models (ADDIE, Bloom\'s Taxonomy, Kolb) to create learner-centered experiences. Developed interactive content using Articulate Storyline and H5P, ensuring accessibility compliance (WCAG, responsive design).',
+      yearKey: 'exp1.year',
+      titleKey: 'exp1.title',
+      companyKey: 'exp1.company',
+      descKey: 'exp1.desc',
     },
     {
-      year: 'Nov 2024 - May 2025',
-      title: 'Instructional Designer (Teens and Children)',
-      company: 'Maven Academies',
-      description: 'Created full storyboards and scripts for video-based courses ensuring smooth narration and age-appropriate pacing. Collaborated with media teams to align visuals, narration, and interactivity. Applied visual storytelling and curriculum mapping techniques to keep learning outcomes engaging.',
+      yearKey: 'exp2.year',
+      titleKey: 'exp2.title',
+      companyKey: 'exp2.company',
+      descKey: 'exp2.desc',
     },
     {
-      year: 'Oct 2024 - Apr 2025',
-      title: 'Instructional Designer',
-      company: 'LearnKhana',
-      description: 'Designed and developed engaging, interactive, and learner-centered educational content. Utilized instructional design models (ADDIE, SAM) and integrated multimedia elements (videos, animations, infographics). Worked with LMS platforms to deploy and track training programs.',
+      yearKey: 'exp3.year',
+      titleKey: 'exp3.title',
+      companyKey: 'exp3.company',
+      descKey: 'exp3.desc',
     },
   ];
 
@@ -33,24 +35,24 @@ const Experience = () => {
     >
       <div className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
-          Experience
+          {t('experience.title')}
         </h2>
         <div className="max-w-4xl mx-auto">
           <div className="space-y-8">
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className={`relative pl-8 border-l-2 border-accent pb-8 last:pb-0 transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
+                className={`relative ps-8 border-s-2 border-accent pb-8 last:pb-0 transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent" />
+                <div className="absolute start-[-9px] top-0 w-4 h-4 rounded-full bg-accent" />
                 <div className="flex items-center gap-2 mb-2">
                   <Briefcase className="w-5 h-5 text-accent" />
-                  <span className="text-sm font-semibold text-accent">{exp.year}</span>
+                  <span className="text-sm font-semibold text-accent">{t(exp.yearKey)}</span>
                 </div>
-                <h3 className="text-xl font-bold mb-1 text-primary">{exp.title}</h3>
-                <p className="text-muted-foreground font-medium mb-3">{exp.company}</p>
-                <p className="text-foreground/90 leading-relaxed">{exp.description}</p>
+                <h3 className="text-xl font-bold mb-1 text-primary">{t(exp.titleKey)}</h3>
+                <p className="text-muted-foreground font-medium mb-3">{t(exp.companyKey)}</p>
+                <p className="text-foreground/90 leading-relaxed">{t(exp.descKey)}</p>
               </div>
             ))}
           </div>
