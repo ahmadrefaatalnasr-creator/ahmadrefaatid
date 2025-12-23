@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Download, FileText } from 'lucide-react';
+import { Download } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -11,51 +11,70 @@ import {
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
 
+import vrElearning from '@/assets/carousels/vr-elearning.jpg';
+import storylineTips from '@/assets/carousels/storyline-tips.jpg';
+import dataAnalysis from '@/assets/carousels/data-analysis.jpg';
+import lxdVsId from '@/assets/carousels/lxd-vs-id.jpg';
+import interactiveVideos from '@/assets/carousels/interactive-videos.jpg';
+import kotobeeBooks from '@/assets/carousels/kotobee-books.jpg';
+import promptEngineering from '@/assets/carousels/prompt-engineering.jpg';
+import bookSummary from '@/assets/carousels/book-summary.jpg';
+import hunyuanVideo from '@/assets/carousels/hunyuan-video.jpg';
+
 const carousels = [
   {
     title: 'VR in E-Learning',
     titleAr: 'الواقع الافتراضي في التعليم الإلكتروني',
     file: 'https://drive.google.com/file/d/1xqefZqdoqcEOo27Xhr8NmuAba9qoB1s1/view?usp=drive_link',
+    image: vrElearning,
   },
   {
     title: 'Storyline 360 Project Tips',
     titleAr: 'إرشاداتك لمشروع مميز في ستوريلاين 360',
     file: '/carousels/ارشاداتك_لمشروع_مميز_في_ستوريلاين_360.pdf',
+    image: storylineTips,
   },
   {
     title: 'Instructional Design & Data Analysis',
     titleAr: 'التصميم التعليمي وتحليل البيانات',
     file: '/carousels/التصميم_التعليمي_وتحليل_البيانات.pdf',
+    image: dataAnalysis,
   },
   {
     title: 'LXD vs ID',
     titleAr: 'الفرق بين LXD و ID',
     file: '/carousels/الفرق_بين_LXD_ID.pdf',
+    image: lxdVsId,
   },
   {
     title: 'Interactive Videos',
     titleAr: 'الفيديوهات التفاعلية',
     file: '/carousels/الفيديوهات_التفاعلية.pdf',
+    image: interactiveVideos,
   },
   {
     title: 'Kotobee for Interactive Books',
     titleAr: 'حوّل كتبك التقليدية إلى تجربة تعليمية تفاعلية باستخدام Kotobee',
     file: '/carousels/حوّل_كتبك_التقليدية_إلى_تجربة_تعليمية_تفاعلية_باستخدام_Kotobee.pdf',
+    image: kotobeeBooks,
   },
   {
     title: 'Prompt Engineering in ID',
     titleAr: 'فن هندسة الأوامر في التصميم التعليمي',
     file: '/carousels/فن_هندسة_الاوامر_في_التصميم_التعليمي.pdf',
+    image: promptEngineering,
   },
   {
     title: 'Instructional Design Book Summary',
     titleAr: 'ملخص الفصل الأول من كتاب التصميم التعليمي',
     file: '/carousels/ملخص_الفصل_الاول_من_كتاب_التصميم_التعليمي.pdf',
+    image: bookSummary,
   },
   {
     title: 'HunyuanVideo Model',
     titleAr: 'نموذج HunyuanVideo',
     file: '/carousels/نموذج_HunyuanVideo.pdf',
+    image: hunyuanVideo,
   },
 ];
 
@@ -100,13 +119,17 @@ const Carousels = () => {
               {carousels.map((item, index) => (
                 <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                   <Card 
-                    className={`h-full bg-card border-border hover:shadow-lg transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                    className={`h-full bg-card border-border hover:shadow-lg transition-all duration-500 overflow-hidden ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
-                    <CardHeader className="space-y-2">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2">
-                        <FileText className="w-6 h-6 text-primary" />
-                      </div>
+                    <div className="relative h-40 overflow-hidden">
+                      <img 
+                        src={item.image} 
+                        alt={isArabic ? item.titleAr : item.title}
+                        className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                      />
+                    </div>
+                    <CardHeader className="space-y-2 pt-4">
                       <CardTitle className="text-lg text-foreground leading-tight">
                         {isArabic ? item.titleAr : item.title}
                       </CardTitle>
