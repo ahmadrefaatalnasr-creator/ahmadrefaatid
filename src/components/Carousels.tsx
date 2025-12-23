@@ -15,7 +15,7 @@ const carousels = [
   {
     title: 'VR in E-Learning',
     titleAr: 'الواقع الافتراضي في التعليم الإلكتروني',
-    file: '/carousels/VR_in_Elearning.pdf',
+    file: 'https://drive.google.com/file/d/1xqefZqdoqcEOo27Xhr8NmuAba9qoB1s1/view?usp=drive_link',
   },
   {
     title: 'Storyline 360 Project Tips',
