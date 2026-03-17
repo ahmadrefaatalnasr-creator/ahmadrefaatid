@@ -36,18 +36,6 @@ const Portfolio = () => {
       Icon: Rocket,
     },
     {
-      title: 'Interactive Video - Outroch',
-      titleAr: 'فيديو تفاعلي - Outroch',
-      description: 'فيديو تفاعلي احترافي يقدم تجربة تعليمية غامرة مع عناصر تفاعلية متقدمة وتصميم جذاب.',
-      descriptionAr: 'فيديو تفاعلي احترافي يقدم تجربة تعليمية غامرة مع عناصر تفاعلية متقدمة وتصميم جذاب.',
-      category: 'Interactive Video',
-      categoryAr: 'فيديو تفاعلي',
-      tools: 'Camtasia',
-      link: 'https://ahmadrefaat2024.github.io/outroch5/',
-      gradient: 'from-rose-500 via-pink-500 to-fuchsia-600',
-      Icon: Video,
-    },
-    {
       title: 'Youth Education Program',
       titleAr: 'برنامج تعليم الشباب',
       description: 'Video-based courses designed for teens and children with age-appropriate pacing, visual storytelling, and curriculum mapping techniques.',
