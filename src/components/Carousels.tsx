@@ -37,7 +37,7 @@ const carousels: CarouselItem[] = [
   {
     title: 'Instructional Design & Data Analysis',
     titleAr: 'التصميم التعليمي وتحليل البيانات',
-    file: '/carousels/التصميم_التعليمي_وتحليل_البيانات.pdf',
+    file: 'https://drive.google.com/file/d/1iGuL1yWYUEGYA_dS1EkOXfdw3M17vbTP/view?usp=sharing',
     Icon: BarChart3,
     gradient: 'from-emerald-500 via-teal-500 to-cyan-600',
   },
