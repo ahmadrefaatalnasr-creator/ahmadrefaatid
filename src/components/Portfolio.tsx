@@ -36,7 +36,7 @@ const Portfolio = () => {
       Icon: Rocket,
     },
     {
-      title: 'Youth Education Program',
+      title: 'Teaching Arabic for non-speakers',
       titleAr: 'برنامج تعليم الشباب',
       description: 'Video-based courses designed for teens and children with age-appropriate pacing, visual storytelling, and curriculum mapping techniques.',
       descriptionAr: 'دورات قائمة على الفيديو مصممة للمراهقين والأطفال مع إيقاع مناسب للعمر وسرد بصري وتقنيات تخطيط المناهج.',
