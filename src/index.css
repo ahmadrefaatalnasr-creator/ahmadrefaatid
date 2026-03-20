@@ -80,7 +80,7 @@ All colors MUST be HSL.
     --muted: 217 33% 18%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 32 95% 58%;
+    --accent: 168 80% 30%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
@@ -88,7 +88,7 @@ All colors MUST be HSL.
 
     --border: 217 33% 18%;
     --input: 217 33% 18%;
-    --ring: 32 95% 58%;
+    --ring: 168 80% 30%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
