@@ -1,4 +1,4 @@
-import { ExternalLink, Sparkles, Rocket, GraduationCap, Shield, ArrowRight, LucideIcon } from 'lucide-react';
+import { ExternalLink, Sparkles, Rocket, GraduationCap, Shield, ArrowRight, LucideIcon, Video } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
