@@ -1,4 +1,4 @@
-import { ExternalLink, Sparkles, Rocket, GraduationCap, Shield, ArrowRight, LucideIcon } from 'lucide-react';
+import { ExternalLink, Sparkles, Rocket, GraduationCap, Shield, ArrowRight, LucideIcon, Video } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -56,6 +56,18 @@ const Portfolio = () => {
       link: 'https://drive.google.com/file/d/14T1XMgUBYiJO4LkDNjwhrfHDiLEWAWoB/view?usp=sharing',
       gradient: 'from-slate-600 via-gray-700 to-zinc-800',
       Icon: Shield,
+    },
+    {
+      title: 'Yesarha – AI Chatbot for LMS',
+      titleAr: 'يسّرها – شات بوت ذكي لأنظمة إدارة التعلم',
+      description: 'AI-powered chatbot integrated into LMS platforms to assist learners while browsing courses, providing instant answers and support using artificial intelligence.',
+      descriptionAr: 'شات بوت مدعوم بالذكاء الاصطناعي يتم دمجه في أنظمة إدارة التعلم (LMS) لمساعدة المتعلمين أثناء تصفح الكورسات وتقديم إجابات فورية باستخدام AI.',
+      category: 'AI Video Production',
+      categoryAr: 'إنتاج فيديو بالذكاء الاصطناعي',
+      tools: 'AI Video Generation, LMS Integration',
+      link: 'https://docs.google.com/presentation/d/1x5A5vOGKKz-MCjTXlYAWx5dtPZvvdHRW2gC9lcCHpdI/edit?usp=sharing',
+      gradient: 'from-cyan-500 via-blue-600 to-indigo-700',
+      Icon: Video,
     },
   ];
 
